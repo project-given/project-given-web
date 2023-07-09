@@ -29,10 +29,20 @@
 			title: 'Baguio, Philippines, 2022',
 			description:
 				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
+		},
+		{
+			title: 'Baguio, Philippines, 2022',
+			description:
+				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
+		},
+		{
+			title: 'Baguio, Philippines, 2022',
+			description:
+				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
 		}
 	];
 
-	const width = 700;
+	const width = 400;
 	const height = 500;
 </script>
 
@@ -47,9 +57,9 @@
 		to helping those who may not otherwise have access to it.
 	</div>
 	<div class="h-16" />
-	<div class="flex w-full flex-row flex-wrap justify-center gap-6">
+	<div class="flex w-full flex-row flex-wrap justify-center gap-10 px-12">
 		{#each about as { title, description }, i}
-			<ImageCard {images} {description} {title} />
+			<ImageCard {images} {description} {title} {width} {height} />
 		{/each}
 	</div>
 </div>

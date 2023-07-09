@@ -3,9 +3,6 @@
 	import { page } from '$app/stores';
 	import Navbar from '$lib/components/navigation/Navbar.svelte';
 	import ImageCarouselPopup from '$lib/components/popups/ImageCarouselPopup.svelte';
-	import { initializeFirebase } from '$lib/firebase';
-
-	initializeFirebase();
 </script>
 
 <div class="font-mono">

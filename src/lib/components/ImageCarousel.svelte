@@ -61,11 +61,11 @@
 			{/each}
 		</div>
 	</div>
-	{#each ['left-4', 'right-4'] as d}
-		<div class={'absolute flex h-full flex-col justify-center ' + d}>
+	{#each ['left-8', 'right-8'] as d}
+		<div class={'group absolute flex h-full flex-col justify-center ' + d}>
 			<div
-				class="h-3 w-3 cursor-pointer rounded-full border-2 border-slate-500 bg-slate-300 shadow-2xl"
-				on:pointerup={() => setCurrent(d === 'left-4' ? currentItem - 1 : currentItem + 1)}
+				class="h-5 w-5 cursor-pointer rounded-full border-2 border-slate-500 bg-slate-300 opacity-80 shadow-2xl transition-all hover:scale-125 hover:opacity-100"
+				on:pointerup={() => setCurrent(d === 'left-8' ? currentItem - 1 : currentItem + 1)}
 			/>
 		</div>
 	{/each}

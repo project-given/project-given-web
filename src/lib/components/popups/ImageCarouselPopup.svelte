@@ -12,12 +12,20 @@
 	>
 		<div
 			use:clickOutside={() => imagePopup.set(null)}
-			class="flex flex-row rounded bg-amber-50 shadow-2xl"
+			class="flex flex-row overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black"
 		>
 			<ImageCarousel images={$imagePopup?.urls} width={800} height={600} />
-			<div class="flex h-full w-min flex-col gap-8 px-4 py-8">
+			<!-- <div class="flex h-full w-min flex-col gap-8 px-4 py-8">
 				<h1 class="text-4xl">{$imagePopup?.title}</h1>
 				<div class="w-96 text-xl">{$imagePopup?.description}</div>
+			</div> -->
+
+			<div class="flex h-full max-w-xl flex-col justify-center gap-6 p-12">
+				<div class="text-6xl">{$imagePopup?.title}</div>
+				<div class="my-6 h-2 w-16 bg-blue-800" />
+				<div class="text-2xl">
+					{$imagePopup?.description}
+				</div>
 			</div>
 		</div>
 	</div>

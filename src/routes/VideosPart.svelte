@@ -21,7 +21,7 @@
 			{#each videos as { id, about }, i}
 				<ShowElement direction="up" delay={200} speed="slow">
 					<div class="flex w-min flex-col">
-						<div class="h-[315px] w-[560px]">
+						<div class="h-[315px] w-[560px] overflow-hidden rounded-lg shadow-sm shadow-black">
 							<lite-youtube videoid={id} />
 						</div>
 

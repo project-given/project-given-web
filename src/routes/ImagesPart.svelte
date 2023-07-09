@@ -33,7 +33,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<div class="flex flex-row overflow-hidden">
+<!-- <div class="flex flex-row overflow-hidden">
 	{#each projectHealthImages as { url, description, title }}
 		<div style={`width: ${width}px; height: ${width}px;`}>
 			{#if width !== 0}
@@ -41,13 +41,12 @@
 			{/if}
 		</div>
 	{/each}
-	<!-- <div class="p-12 text-6xl">PROJECT HEALTH</div> -->
-	<!-- <ImagesGallery images={projectHealthImages} imageHeight={500} imageWidth={500} /> -->
-</div>
+</div> -->
+<!-- <div class="p-12 text-6xl">PROJECT HEALTH</div> -->
+<!-- <ImagesGallery images={projectHealthImages} imageHeight={500} imageWidth={500} /> -->
 
 <div class="h-40" />
 
-<div class="flex w-screen flex-col">
-	<div class="p-12 text-6xl">PROJECT EDUCATION</div>
+<div class="shadow shadow-black">
 	<ImagesGallery images={projectHealthImages} imageHeight={500} imageWidth={500} />
 </div>

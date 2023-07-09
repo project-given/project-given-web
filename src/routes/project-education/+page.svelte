@@ -29,23 +29,37 @@
 			title: 'Baguio, Philippines, 2022',
 			description:
 				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
+		},
+		{
+			title: 'Baguio, Philippines, 2022',
+			description:
+				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
+		},
+		{
+			title: 'Baguio, Philippines, 2022',
+			description:
+				'Project Given provided medical help through online meetings with 2 doctors from the United States. Ten patients were treated in total, with each patient getting prescriptions based on their symptoms and lifestyle.'
 		}
 	];
+
+	const width = 400;
+	const height = 500;
 </script>
 
 <div class="flex w-full flex-col items-center p-8">
-	<div class="text-8xl">PROJECT EDUCATION</div>
-	<div>
+	<div class="text-8xl">PROJECT HEALTH</div>
+	<div class="h-4" />
+	<div class="max-w-4xl">
 		Our mission is to make quality healthcare accessible to all, regardless of their location or
 		financial status. We offer telemedicine clinics and other services that are completely free of
 		charge and staffed by volunteers who are committed to making a positive difference in the world.
 		We believe that everyone has the right to receive the medical care they need and are dedicated
 		to helping those who may not otherwise have access to it.
 	</div>
-	<div class="h-[100px]" />
-	<div class="flex w-full flex-row flex-wrap justify-center gap-6">
+	<div class="h-16" />
+	<div class="flex w-full flex-row flex-wrap justify-center gap-10 px-12">
 		{#each about as { title, description }, i}
-			<ImageCard {images} {description} {title} />
+			<ImageCard {images} {description} {title} {width} {height} />
 		{/each}
 	</div>
 </div>

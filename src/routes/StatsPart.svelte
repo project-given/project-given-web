@@ -46,15 +46,4 @@
 	</div>
 
 	<!-- Text -->
-	<div class="h-60" />
-	<ShowElement delay={200} direction="up">
-		<div class=" max-w-4xl">
-			<div class="pb-4 text-5xl font-bold">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas inventore excepturi adipisci
-			</div>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, inventore! Iure voluptatem
-			dolor incidunt veritatis ipsum amet accusamus beatae reprehenderit minus magnam, quidem magni animi!
-			Explicabo ex qui voluptatum est!
-		</div>
-	</ShowElement>
 </div>

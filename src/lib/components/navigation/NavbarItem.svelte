@@ -55,7 +55,7 @@
 		<div
 			bind:this={urlsElement}
 			transition:slide={{ duration: 100 }}
-			class="absolute top-14 flex flex-col gap-10 bg-white p-4"
+			class="absolute top-14 flex flex-col gap-10 overflow-hidden rounded-lg bg-white p-4 shadow-sm shadow-black"
 		>
 			{#each urls as { url, name, description }}
 				<a

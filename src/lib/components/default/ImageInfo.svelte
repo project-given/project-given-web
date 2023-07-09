@@ -35,7 +35,7 @@
 		src={url}
 		alt={title}
 		style={dimensions}
-		class="transition-transform duration-700 group-hover:scale-110"
+		class="object-cover transition-transform duration-700 group-hover:scale-110"
 	/>
 	{#if hovered}
 		<div transition:fade class="absolute top-0 z-10 h-full w-full bg-black p-8 opacity-70">

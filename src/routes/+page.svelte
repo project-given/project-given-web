@@ -5,6 +5,7 @@
 	import StatsPart from './StatsPart.svelte';
 	import TopPart from './TopPart.svelte';
 	import VideosPart from './VideosPart.svelte';
+	import AboutPart from './AboutPart.svelte';
 
 	let scrollY: number = 0;
 	let height: number = 1;
@@ -24,8 +25,9 @@
 
 <div class=" bg-white">
 	<StatsPart />
-
-	<div class="h-10" />
+	<div class="h-60" />
+	<AboutPart />
+	<div class="h-32" />
 
 	<ImagesPart />
 
