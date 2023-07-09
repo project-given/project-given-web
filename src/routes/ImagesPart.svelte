@@ -1,37 +1,57 @@
 <script lang="ts">
-	import ImageInfo from '$lib/components/default/ImageInfo.svelte';
 	import ImagesGallery from '$lib/components/default/ImagesGallery.svelte';
+	import { firestore, storage } from '$lib/firebase';
+	import { getDoc, getDocs, limit, orderBy, query } from 'firebase/firestore';
+	import { ref, type StorageReference } from 'firebase/storage';
+	import { onMount } from 'svelte';
 
-	const projectHealthImages: { url: string; description: string; title: string }[] = [
-		{
-			url: 'https://images.unsplash.com/20/cambridge.JPG?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYxOTE4M3w&ixlib=rb-4.0.3&q=85&w=1920',
-			description: 'SOMETHING',
-			title: 'TITLE!'
-		},
-		{
-			url: 'https://images.unsplash.com/photo-1507664224104-296e39ab59e6?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYyMTM5M3w&ixlib=rb-4.0.3&q=85&w=1920',
-			description: 'SOMETHING2',
-			title: 'TITLE2!'
-		},
-		{
-			url: 'https://images.unsplash.com/21/shaggy.JPG?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYyMTM5M3w&ixlib=rb-4.0.3&q=85&w=1920',
-			description: 'SOMETHING3',
-			title: 'TITLE!3'
-		},
-		{
-			url: 'https://images.unsplash.com/photo-1475727946784-2890c8fdb9c8?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYyMTM5M3w&ixlib=rb-4.0.3&q=85&w=1920',
-			description: 'SOMETHING4',
-			title: 'TITLE!4'
-		}
-	];
+	let images: {
+		title: string;
+		description: string;
+		firstImage: string;
+		imagesRef: StorageReference;
+	}[] = [];
 
-	let windowWidth: number = 0;
-	let width: number = 0;
-	// let height: number = 500;
-	$: width = windowWidth / 4;
+	onMount(async () => {
+		const col = (a: any) => getDocs(query(a, orderBy('createdAt', 'desc'), limit(3)));
+		const [edu, hel] = await Promise.all([
+			col(firestore.projectEducationCollection),
+			col(firestore.projectHealthCollection)
+		]);
+
+		edu.forEach((item) => {
+			const data = item.data()! as any;
+			const id = item.id;
+
+			images.push({
+				title: data.title,
+				description: data.description,
+				firstImage: data.firstImage,
+				imagesRef: ref(storage.projectEducation, id)
+			});
+
+			const last = images.length - 1;
+			images[last] = images[last];
+		});
+
+		hel.forEach((item) => {
+			const data = item.data()! as any;
+			const id = item.id;
+
+			images.push({
+				title: data.title,
+				description: data.description,
+				firstImage: data.firstImage,
+				imagesRef: ref(storage.projectHealth, id)
+			});
+
+			const last = images.length - 1;
+			images[last] = images[last];
+		});
+
+		console.log(images);
+	});
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <!-- <div class="flex flex-row overflow-hidden">
 	{#each projectHealthImages as { url, description, title }}
@@ -48,5 +68,5 @@
 <div class="h-40" />
 
 <div class="shadow shadow-black">
-	<ImagesGallery images={projectHealthImages} imageHeight={500} imageWidth={500} />
+	<ImagesGallery bind:images imageHeight={500} imageWidth={500} />
 </div>

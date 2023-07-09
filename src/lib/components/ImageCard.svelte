@@ -1,26 +1,51 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { imagePopup } from '$lib/popups';
+	import {
+		getDownloadURL,
+		getMetadata,
+		listAll,
+		ref,
+		type StorageReference
+	} from 'firebase/storage';
+	import { onMount } from 'svelte';
 
-	export let images: string[];
+	export let firstImage: string;
+	export let imagesRef: StorageReference;
 	export let title: string;
 	export let description: string;
 
 	export let width: number = 300;
 	export let height: number = 500;
+
+	let imageSrc: string = '';
+	onMount(async () => (imageSrc = await getDownloadURL(ref(imagesRef, firstImage))));
+
+	async function getRestOfImages() {
+		const allImages = await listAll(imagesRef);
+		allImages.items.forEach(async (item) => {
+			const metadata = await getMetadata(item);
+			if (metadata.name === firstImage) return;
+
+			const url = await getDownloadURL(item);
+			imagePopup.update((ip) => {
+				if (!ip) return ip;
+				ip!['urls'].push(url);
+				return ip;
+			});
+		});
+	}
 </script>
 
 <div
 	class="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg shadow shadow-black transition-all duration-300 hover:z-10 hover:scale-105"
 	style={`width: ${width}px; height: ${height}px;`}
-	on:pointerup={() =>
-		imagePopup.set({
-			urls: images,
-			title: title,
-			description: description
-		})}
+	on:pointerup={() => {
+		imagePopup.set({ urls: [imageSrc], title: title, description: description });
+		getRestOfImages();
+	}}
 >
-	<img src={images[0]} alt="..." class="h-3/5 w-full object-cover" />
+	<img src={imageSrc} alt="..." class="h-3/5 w-full object-cover" />
 	<div transition:fade class="flex flex-col justify-between p-6">
 		<div class="text-2xl">{title}</div>
 		<div class="text-lg text-slate-500">December 20</div>

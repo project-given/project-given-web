@@ -2,37 +2,60 @@
 	import { onMount } from 'svelte';
 	import ImageInfo from './ImageInfo.svelte';
 	import { imagePopup } from '$lib/popups';
+	import type { StorageReference } from 'firebase/storage';
 
-	export let images: { url: string; description: string; title: string }[];
+	export let images: {
+		firstImage: string;
+		imagesRef: StorageReference;
+		description: string;
+		title: string;
+	}[];
 	export let imageHeight: number = 300;
 	export let imageWidth: number = 300;
 
-	let totalLength: number = 1000;
 	let container: HTMLElement;
 	let moving = { stop: false };
+
 	onMount(async () => {
-		totalLength = container.scrollWidth / 2;
-		let left: number = -totalLength;
+		let left: number = -container.scrollWidth / 2;
+
 		while (true) {
 			await new Promise((r) => setTimeout(r, 10));
 			if (!container) break;
-
 			if (moving.stop || $imagePopup) continue;
-
 			container.style.left = left + 'px';
 			left += 1;
-			if (left === 0) left = -totalLength;
+			if (left >= 0) left = -container.scrollWidth / 2;
 		}
 	});
 </script>
 
 <div class="relative overflow-hidden" style={`height: ${imageHeight}px;`}>
 	<div bind:this={container} class="absolute flex flex-row items-center justify-start">
-		{#each [0, 1] as _}
-			{#each images as { url, description, title }}
-				<ImageInfo {url} {description} {title} height={imageHeight} width={imageWidth} {moving} />
-			{/each}
+		<!-- {#each [0, 1] as _} -->
+		{#each images as { firstImage, imagesRef, description, title }}
+			<ImageInfo
+				{firstImage}
+				{imagesRef}
+				{description}
+				{title}
+				height={imageHeight}
+				width={imageWidth}
+				{moving}
+			/>
 		{/each}
+		{#each images as { firstImage, imagesRef, description, title }}
+			<ImageInfo
+				{firstImage}
+				{imagesRef}
+				{description}
+				{title}
+				height={imageHeight}
+				width={imageWidth}
+				{moving}
+			/>
+		{/each}
+		<!-- {/each} -->
 	</div>
 </div>
 

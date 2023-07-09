@@ -1,14 +1,27 @@
 <script lang="ts">
 	import ShowElement from '$lib/components/ShowElement.svelte';
+	import { firestore } from '$lib/firebase';
 	import '@justinribeiro/lite-youtube';
+	import { getDocs, orderBy, query } from 'firebase/firestore';
+	import { onMount } from 'svelte';
 
 	// const links: string[] = ['vZCYYDSyFJs', 'V6PGQHT1gTU', '0NdEtMfItY0', 'pQ39qnslU5A'];
 	const videos: { id: string; about: string }[] = [
-		{ id: 'vZCYYDSyFJs', about: 'Medical Mission Baguio' },
-		{ id: 'V6PGQHT1gTU', about: 'Making Food for the homeless at Operation Nightwatch, Seattle' },
-		{ id: '0NdEtMfItY0', about: 'English Camp, Hong-cheon' },
-		{ id: 'JsiF0CgupAs', about: 'How to Brush Teeth!' }
+		// { id: 'vZCYYDSyFJs', about: 'Medical Mission Baguio' },
+		// { id: 'V6PGQHT1gTU', about: 'Making Food for the homeless at Operation Nightwatch, Seattle' },
+		// { id: '0NdEtMfItY0', about: 'English Camp, Hong-cheon' },
+		// { id: 'JsiF0CgupAs', about: 'How to Brush Teeth!' }
 	];
+
+	onMount(async () => {
+		const vids = await getDocs(query(firestore.youtubeCollection, orderBy('createdAt', 'desc')));
+		vids.forEach((vid) => {
+			const data = vid.data()!;
+			videos.push({ id: data.id, about: data.title });
+			const last = videos.length - 1;
+			videos[last] = videos[last];
+		});
+	});
 </script>
 
 <div class="flex w-full flex-row justify-center">
