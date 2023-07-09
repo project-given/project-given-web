@@ -1,3 +1,5 @@
-This was made in a rush.
+The Project Given Web.
 
-Please dont attack me for this hellscape of unorganized code, future me or some other coder that joins project given.
+And yes, there is no such thing as documentation.
+Neither is there any comments in my code.
+It is glorious as it is.
