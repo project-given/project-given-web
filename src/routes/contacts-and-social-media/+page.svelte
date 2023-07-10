@@ -29,7 +29,7 @@
 	}
 </script>
 
-<div class="flex h-screen w-screen flex-row justify-center gap-8 p-8 pt-16">
+<div class="flex h-screen w-full flex-row justify-center gap-8 p-8 pt-16">
 	<div class="flex h-min w-full max-w-lg flex-col text-8xl">
 		<div>GET</div>
 		<div>INVOLVED</div>

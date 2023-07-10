@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { clickOutside } from '$lib/clickOutside';
 	import { fade, slide } from 'svelte/transition';
 
@@ -88,7 +89,10 @@
 				<a
 					class="group/url flex min-w-[200px] flex-col"
 					href={url}
-					on:pointerup={() => (showUrls = false)}
+					on:pointerup={() => {
+						showUrls = false;
+						goto(url);
+					}}
 				>
 					<div class="whitespace-nowrap text-xl font-bold transition-all group-hover/url:underline">
 						{name}
