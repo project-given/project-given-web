@@ -7,6 +7,7 @@ interface ImagePopupParameters {
 	// imagesRef: string[];
 	title: string;
 	description: string;
+	createdAt: string;
 }
 
 const imagePopup: Writable<ImagePopupParameters | null> = writable(null);

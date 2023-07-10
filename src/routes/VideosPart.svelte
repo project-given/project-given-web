@@ -26,10 +26,6 @@
 
 <div class="flex w-full flex-row justify-center">
 	<div class="flex flex-col items-center p-8">
-		<ShowElement direction="fade">
-			<div class="pb-4 text-7xl">LATEST NEWS</div>
-		</ShowElement>
-
 		<div class="flex flex-row flex-wrap justify-center gap-4">
 			{#each videos as { id, about }, i}
 				<ShowElement direction="up" delay={200} speed="slow">

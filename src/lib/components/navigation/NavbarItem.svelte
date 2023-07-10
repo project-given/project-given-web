@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/clickOutside';
-	import { slide } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 
 	export let name: string;
 	export let urls: {
@@ -8,7 +8,7 @@
 		name: string;
 		description: string;
 	}[] = [];
-	export let onClick: Function | undefined;
+	// export let onClick: Function | undefined;
 
 	let showUrls: boolean = false;
 	let navbarItem: HTMLElement;
@@ -32,6 +32,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div
+	transition:fade
 	class="group relative flex h-full w-min flex-col items-center justify-center first:mr-auto"
 	use:clickOutside={handleClickOutside}
 	bind:this={navbarItem}
@@ -42,10 +43,10 @@
 		on:cancel={() => (showUrls = false)}
 		on:pointerup={() => {
 			showUrls = !showUrls;
-			if (onClick) {
-				onClick();
-				showUrls = false;
-			}
+			// if (onClick) {
+			// 	onClick();
+			// 	showUrls = false;
+			// }
 		}}
 	>
 		{name}

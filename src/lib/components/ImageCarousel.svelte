@@ -2,22 +2,31 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
+	// export let width: number;
+	// export let height: number;
 	export let images: string[];
-	export let width: number;
-	export let height: number;
 	export let automaticMove: boolean = true;
 
 	let imagesContainer: HTMLElement;
+	let parent: HTMLElement;
 	let currentItem: number = 0;
 
-	$: if (imagesContainer) imagesContainer.style.left = `${-1 * currentItem * width}px`;
+	$: if (imagesContainer)
+		imagesContainer.style.left = `${
+			-1 * currentItem * (imagesContainer.scrollWidth / images.length)
+		}px`;
 	function setCurrent(i: number) {
 		if (i < 0) currentItem = images.length - 1;
 		else if (i === images.length) currentItem = 0;
 		else currentItem = i;
 	}
 
+	let dimensions: string = '';
 	onMount(async () => {
+		const b = parent.getBoundingClientRect();
+		dimensions = `width: ${b.width}px; height: ${b.height}px`;
+		console.log(dimensions);
+
 		if (!automaticMove) return;
 
 		let lastItem = currentItem;
@@ -38,13 +47,22 @@
 	});
 </script>
 
-<div class="relative overflow-hidden" style={`width: ${width}px; height: ${height}px;`}>
+<!-- <div class="relative overflow-hidden" style={`width: ${width}px; height: ${height}px;`}>
 	<div bind:this={imagesContainer} class="absolute top-0 flex flex-row transition-all duration-500">
 		{#each images as image, i}
-			<div style={`width: ${width}px; height: ${height}px;`}>
+			<div style={`width: ${width}px; height: ${height}px;`}> -->
+
+<div bind:this={parent} class="relative h-full w-full overflow-hidden">
+	<div
+		bind:this={imagesContainer}
+		class="absolute top-0 flex h-full flex-row transition-all duration-500"
+	>
+		{#each images as image, i}
+			<div style={dimensions} class="">
 				<img
+					style={dimensions}
 					id={`${i}`}
-					class="h-full w-full bg-black bg-center object-cover"
+					class="bg-black bg-center object-cover"
 					src={image}
 					alt="..."
 				/>

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import ShowElement from '$lib/components/ShowElement.svelte';
 	import ImageInfo from '$lib/components/default/ImageInfo.svelte';
 	import { firestore, storage } from '$lib/firebase';
 	import { doc, getDoc, type DocumentSnapshot } from 'firebase/firestore';
-	import { getDownloadURL, ref, type StorageReference } from 'firebase/storage';
+	import { getDownloadURL, listAll, ref, type StorageReference } from 'firebase/storage';
 	import { onMount } from 'svelte';
 
 	// let
@@ -17,10 +18,12 @@
 			description: string;
 			createdAt: string;
 
-			firstImage: string;
-			imagesRef: StorageReference;
+			// firstImage: string;
+			// imagesRef: StorageReference;
 		};
 	} = {};
+
+	let images: string[] = [];
 
 	onMount(async () => {
 		// const document =
@@ -30,23 +33,34 @@
 		info['about'] = data.about;
 
 		let event: DocumentSnapshot;
-		if (data.type === 'projectHealth')
+		if (data.main.type === 'projectHealth')
 			event = await getDoc(doc(firestore.projectHealthCollection, id));
 		else event = await getDoc(doc(firestore.projectEducationCollection, id));
 		const eventData = event.data()!;
 
-		let imagesRef: StorageReference;
-		if (data.type === 'projectHealth') imagesRef = ref(storage.projectHealth, id);
-		else imagesRef = ref(storage.projectEducation, id);
-
 		info['main'] = {
 			title: eventData.title,
 			description: eventData.description,
-			createdAt: eventData.createdAt.toDate().toISOString(),
-
-			firstImage: eventData.firstImage,
-			imagesRef: imagesRef
+			createdAt: eventData.createdAt.toDate().toISOString()
 		};
+		// let imagesRef: StorageReference;
+		// if (data.main.type === 'projectHealth') imagesRef = ref(storage.projectHealth, id);
+		// else imagesRef = ref(storage.projectEducation, id);
+
+		const imagesRef: StorageReference =
+			data.main.type === 'projectHealth' ? storage.projectHealth : storage.projectEducation;
+		const allImages = await listAll(ref(imagesRef, id));
+		allImages.items.forEach(async (item) => {
+			const url = await getDownloadURL(item);
+			images.push(url);
+			const last = images.length - 1;
+			images[last] = images[last];
+			// imagePopup.update((ip) => {
+			// 	if (!ip) return ip;
+			// 	ip!['urls'].push(url);
+			// 	return ip;
+			// });
+		});
 	});
 </script>
 
@@ -63,29 +77,47 @@
 	</div>
 </ShowElement>
 <div class="h-60" />
-<ShowElement delay={200} direction="fade">
-	<div class="flex h-[400px] w-full flex-row justify-center">
+<!-- <ShowElement delay={200} direction="fade"> -->
+
+<div class="flex h-[75vh] w-full flex-row">
+	<div class="flex-1">
+		<ImageCarousel bind:images />
+	</div>
+	<div class="flex max-w-5xl flex-1 flex-col justify-center bg-blue-1 p-16 text-white">
+		<ShowElement delay={200} direction="left">
+			<div class="h-full w-full">
+				{#if info['main']}
+					<div class="text-7xl">{info['main']['title']}</div>
+					<div class="h-20" />
+					<div class="text-3xl">{info['main']['description']}</div>
+				{/if}
+			</div>
+		</ShowElement>
+	</div>
+</div>
+
+<!-- <div class="flex h-[500px] w-full flex-row justify-center">
 		{#if info['main']}
-			<div class="h-full overflow-hidden rounded-xl shadow-lg shadow-black">
+			<div class="h-[500px] max-w-2xl overflow-hidden rounded-xl shadow-lg shadow-black">
 				<ImageInfo
 					title={info['main']['title']}
 					description={info['main']['description']}
 					firstImage={info['main']['firstImage']}
 					imagesRef={info['main']['imagesRef']}
-					height={400}
 				/>
-				<!-- <ImageInfo
-					title="SOMETHING"
-					description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sapiente mollitia ut quasi dolore pariatur, explicabo quas fugit! Fugit, nostrum! Nam porro autem rem necessitatibus, voluptas quis assumenda dolorum ea."
-					url="https://images.unsplash.com/20/cambridge.JPG?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYxOTE4M3w&ixlib=rb-4.0.3&q=85&w=1920"
-					height={400}
-					/> -->
 			</div>
 			<div class="flex h-full max-w-xl flex-col justify-center gap-6 pl-12">
 				<div class="text-6xl">{info['main']['title']}</div>
-				<div class="h-2 w-16 bg-blue-800" />
+				<div class="h-2 w-16 bg-blue-1" />
 				<div class="text-lg">{info['main']['description']}</div>
 			</div>
-		{/if}
-	</div>
-</ShowElement>
+			{/if}
+		</div> -->
+<!-- height={400} -->
+<!-- <ImageInfo
+			title="SOMETHING"
+			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sapiente mollitia ut quasi dolore pariatur, explicabo quas fugit! Fugit, nostrum! Nam porro autem rem necessitatibus, voluptas quis assumenda dolorum ea."
+			url="https://images.unsplash.com/20/cambridge.JPG?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTY4ODYxOTE4M3w&ixlib=rb-4.0.3&q=85&w=1920"
+			height={400}
+			/> -->
+<!-- </ShowElement> -->

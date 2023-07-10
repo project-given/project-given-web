@@ -16,15 +16,15 @@
 	export let title: string;
 	export let description: string;
 
-	export let height: number = -1;
-	export let width: number = -1;
+	// export let height: number = -1;
+	// export let width: number = -1;
 	export let moving: { stop: boolean } = { stop: false };
 
 	let hovered: boolean = false;
 	$: moving.stop = hovered;
-	let dimensions: string = '';
-	if (height !== -1) dimensions += `height: ${height}px;`;
-	if (width !== -1) dimensions += `width: ${width}px;`;
+	// let dimensions: string = '';
+	// if (height !== -1) dimensions += `height: ${height}px;`;
+	// if (width !== -1) dimensions += `width: ${width}px;`;
 
 	let imageSrc: string = '';
 	onMount(async () => {
@@ -51,9 +51,9 @@
 	}
 </script>
 
+<!-- style={dimensions} -->
 <div
-	class="group relative cursor-pointer overflow-hidden"
-	style={dimensions}
+	class="group relative h-full w-full cursor-pointer overflow-hidden"
 	on:pointerenter={() => (hovered = true)}
 	on:pointerleave={() => (hovered = false)}
 	on:pointerup={() => {
@@ -63,11 +63,11 @@
 		// setImagePopupParameters({ url: url, title: title, description: description });
 	}}
 >
+	<!-- style={dimensions} -->
 	<img
 		src={imageSrc}
 		alt={title}
-		style={dimensions}
-		class="object-cover transition-transform duration-700 group-hover:scale-110"
+		class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
 	/>
 	{#if hovered}
 		<div transition:fade class="absolute top-0 z-10 h-full w-full bg-black p-8 opacity-70">

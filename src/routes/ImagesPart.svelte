@@ -48,8 +48,6 @@
 			const last = images.length - 1;
 			images[last] = images[last];
 		});
-
-		console.log(images);
 	});
 </script>
 
@@ -65,8 +63,8 @@
 <!-- <div class="p-12 text-6xl">PROJECT HEALTH</div> -->
 <!-- <ImagesGallery images={projectHealthImages} imageHeight={500} imageWidth={500} /> -->
 
-<div class="h-40" />
+<!-- <div class="h-40" /> -->
 
 <div class="shadow shadow-black">
-	<ImagesGallery bind:images imageHeight={500} imageWidth={500} />
+	<ImagesGallery bind:images />
 </div>

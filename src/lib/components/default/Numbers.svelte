@@ -34,10 +34,12 @@
 	});
 </script>
 
-<div class="flex w-min flex-col p-2" bind:this={root}>
-	<div class="flex flex-row">
-		<div class="text-8xl font-bold">{currentNum}</div>
-		<div class="text-6xl font-bold">{suffix}</div>
+<div class="flex w-min flex-row" bind:this={root}>
+	<div class="flex flex-col">
+		<div class="flex w-36 flex-row justify-end text-8xl font-bold text-blue-0">
+			{currentNum}
+		</div>
+		<div class="text-end text-2xl font-bold text-black">{about}</div>
 	</div>
-	<div class="text-2xl">{about}</div>
+	<div class="text-6xl font-bold text-blue-1">{suffix}</div>
 </div>

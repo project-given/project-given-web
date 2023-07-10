@@ -10,8 +10,8 @@
 		description: string;
 		title: string;
 	}[];
-	export let imageHeight: number = 300;
-	export let imageWidth: number = 300;
+	// export let imageHeight: number = 300;
+	// export let imageWidth: number = 300;
 
 	let container: HTMLElement;
 	let moving = { stop: false };
@@ -20,7 +20,7 @@
 		let left: number = -container.scrollWidth / 2;
 
 		while (true) {
-			await new Promise((r) => setTimeout(r, 10));
+			await new Promise((r) => setTimeout(r, 3));
 			if (!container) break;
 			if (moving.stop || $imagePopup) continue;
 			container.style.left = left + 'px';
@@ -30,32 +30,15 @@
 	});
 </script>
 
-<div class="relative overflow-hidden" style={`height: ${imageHeight}px;`}>
+<div class="relative h-[500px] w-full overflow-x-hidden">
 	<div bind:this={container} class="absolute flex flex-row items-center justify-start">
-		<!-- {#each [0, 1] as _} -->
-		{#each images as { firstImage, imagesRef, description, title }}
-			<ImageInfo
-				{firstImage}
-				{imagesRef}
-				{description}
-				{title}
-				height={imageHeight}
-				width={imageWidth}
-				{moving}
-			/>
+		{#each [0, 1] as _}
+			{#each images as { firstImage, imagesRef, description, title }}
+				<div class="h-[500px] w-[500px]">
+					<ImageInfo {firstImage} {imagesRef} {description} {title} {moving} />
+				</div>
+			{/each}
 		{/each}
-		{#each images as { firstImage, imagesRef, description, title }}
-			<ImageInfo
-				{firstImage}
-				{imagesRef}
-				{description}
-				{title}
-				height={imageHeight}
-				width={imageWidth}
-				{moving}
-			/>
-		{/each}
-		<!-- {/each} -->
 	</div>
 </div>
 

@@ -5,13 +5,12 @@
 	import ImageCarouselPopup from '$lib/components/popups/ImageCarouselPopup.svelte';
 </script>
 
-<div class="font-mono">
-	{#if $page.url.pathname !== '/'}
-		<div class="fixed top-0 z-40">
-			<Navbar />
-		</div>
-	{/if}
-	<div class={$page.url.pathname !== '/' ? 'pt-12' : ''}>
+<div class="font-poppins">
+	<!-- {#if $page.url.pathname !== '/'} -->
+	<div class="fixed top-0 z-40 w-full">
+		<Navbar />
+	</div>
+	<div class={$page.url.pathname !== '/' ? 'pt-20' : ''}>
 		<slot />
 	</div>
 </div>

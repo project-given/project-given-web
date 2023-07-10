@@ -12,11 +12,13 @@
 
 	export let firstImage: string;
 	export let imagesRef: StorageReference;
+
 	export let title: string;
 	export let description: string;
+	export let createdAt: string;
 
-	export let width: number = 300;
-	export let height: number = 500;
+	// export let width: number = 300;
+	// export let height: number = 500;
 
 	let imageSrc: string = '';
 	onMount(async () => (imageSrc = await getDownloadURL(ref(imagesRef, firstImage))));
@@ -37,23 +39,30 @@
 	}
 </script>
 
+<!-- style={`width: ${width}px; height: ${height}px;`} -->
 <div
-	class="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg shadow shadow-black transition-all duration-300 hover:z-10 hover:scale-105"
-	style={`width: ${width}px; height: ${height}px;`}
+	class="h-[500px] w-[450px] cursor-pointer overflow-hidden rounded-lg shadow shadow-black transition-all duration-300 hover:z-10 hover:scale-105"
 	on:pointerup={() => {
-		imagePopup.set({ urls: [imageSrc], title: title, description: description });
+		imagePopup.set({
+			urls: [imageSrc],
+			title: title,
+			description: description,
+			createdAt: createdAt
+		});
 		getRestOfImages();
 	}}
 >
-	<img src={imageSrc} alt="..." class="h-3/5 w-full object-cover" />
-	<div transition:fade class="flex flex-col justify-between p-6">
-		<div class="text-2xl">{title}</div>
-		<div class="text-lg text-slate-500">December 20</div>
+	<div class="group relative flex h-full w-full flex-col">
+		<img src={imageSrc} alt="..." class="h-3/5 w-full object-cover" />
+		<div transition:fade class="flex h-2/5 flex-col justify-between p-6">
+			<div class="text-2xl text-blue-0">{title}</div>
+			<div class="text-end text-lg text-slate-500">{createdAt}</div>
+		</div>
 	</div>
 </div>
 <!-- class="absolute bottom-0 flex h-20 w-full flex-row items-end justify-start bg-opacity-40 bg-gradient-to-t from-black p-5 pl-7" -->
 
-<!-- <div
+<!-- <div .
 	class="group flex h-96 w-[500px] cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow shadow-black"
 	on:pointerenter={() => (hovered = true)}
 	on:pointerleave={() => (hovered = false)}
