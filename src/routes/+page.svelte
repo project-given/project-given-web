@@ -18,7 +18,7 @@
 <div class=" bg-white">
 	<div class="h-8 md:h-20" />
 	<StatsPart />
-	<div class="h-96" />
+	<div class="h-32 md:h-96" />
 	<AboutPart />
 	<div class="h-32" />
 
