@@ -32,24 +32,24 @@
 					url: '/mission-and-history',
 					name: 'Mission and History',
 					description: 'This is our mission and history page'
-				},
-				{
-					url: '/contacts-and-social-media',
-					name: 'Contacts and Social Media',
-					description: 'This is our contacts and social media page'
 				}
-			]
-		},
-		{
-			name: 'Latest',
-			urls: [
-				{
-					url: 'google.com',
-					name: 'Blog',
-					description: 'This is where we store our blogs'
-				}
+				// {
+				// 	url: '/contacts-and-social-media',
+				// 	name: 'Contacts and Social Media',
+				// 	description: 'This is our contacts and social media page'
+				// }
 			]
 		}
+		// {
+		// 	name: 'Latest',
+		// 	urls: [
+		// 		{
+		// 			url: 'google.com',
+		// 			name: 'Blog',
+		// 			description: 'This is where we store our blogs'
+		// 		}
+		// 	]
+		// }
 	];
 </script>
 

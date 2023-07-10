@@ -24,6 +24,7 @@ const firestore = {
 	infoDoc: doc(firestoreGet, 'main/info'),
 	projectEducationInfoDoc: doc(firestoreGet, 'main/latestNews/projectEducation/info'),
 	projectHealthInfoDoc: doc(firestoreGet, 'main/latestNews/projectHealth/info'),
+	missionAndHistoryInfoDoc: doc(firestoreGet, 'main/latestNews/missionAndHistory/info'),
 
 	projectEducationCollection: collection(firestoreGet, 'main/latestNews/projectEducation'),
 	projectHealthCollection: collection(firestoreGet, 'main/latestNews/projectHealth'),
