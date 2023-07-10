@@ -35,11 +35,13 @@
 </script>
 
 <div class="flex w-min flex-row" bind:this={root}>
-	<div class="flex flex-col">
-		<div class="flex w-36 flex-row justify-end text-8xl font-bold text-blue-0">
-			{currentNum}
+	<div class="ml-12 flex flex-col items-end sm:ml-0">
+		<div class="relative h-24 w-32 text-blue-0 sm:h-16 sm:w-20 md:h-20 md:w-24 xl:h-24 xl:w-32">
+			<div class="absolute right-0 text-8xl font-bold sm:text-5xl md:text-7xl xl:text-8xl">
+				{currentNum}
+			</div>
 		</div>
-		<div class="text-end text-2xl font-bold text-black">{about}</div>
+		<div class="text-end font-bold text-black md:text-2xl">{about}</div>
 	</div>
-	<div class="text-6xl font-bold text-blue-1">{suffix}</div>
+	<div class="text-5xl font-bold text-blue-1 md:text-5xl xl:text-6xl">{suffix}</div>
 </div>

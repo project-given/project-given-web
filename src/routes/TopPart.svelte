@@ -16,15 +16,17 @@
 		/>
 
 		<div
-			class="absolute bottom-0 flex w-full flex-col justify-center gap-4 bg-gradient-to-t from-black to-transparent px-20 py-28"
+			class="absolute bottom-0 flex w-full flex-col justify-center gap-4 bg-gradient-to-t from-black to-transparent p-8 md:px-20 md:py-28 md:pt-40"
 		>
 			<ShowElement speed="slow" direction="fade" delay={300}>
-				<div class="text-8xl font-bold text-green-4">PROJECT GIVEN</div>
+				<div class="text-4xl font-bold text-green-4 sm:text-6xl md:text-7xl xl:text-8xl">
+					Project Given
+				</div>
 			</ShowElement>
 
 			<ShowElement speed="slow" direction="fade" delay={300}>
-				<div class="max-w-6xl text-3xl font-bold text-green-2">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+				<div class="max-w-6xl font-bold text-green-2 sm:text-lg md:text-2xl xl:text-3xl">
+					Humanitarian Aid for Healthcare and Education
 				</div>
 			</ShowElement>
 		</div>

@@ -14,12 +14,14 @@ const months = [
 ];
 
 function getDate(date: Date) {
-	// const date = new Date(iso8601);
-	const month = months[date.getMonth()];
-	const year = date.getFullYear();
-	const day = date.getDay();
-
-	return `${month} ${day}, ${year}`;
+	const d: number[] = [];
+	date
+		.toISOString()
+		.substring(0, 10)
+		.split('-')
+		.forEach((s) => d.push(Number(s)));
+	console.log(d);
+	return `${months[d[1] - 1]} ${d[2]}, ${d[0]}`;
 }
 
 export { getDate };

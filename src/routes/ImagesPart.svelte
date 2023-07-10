@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ImagesGallery from '$lib/components/default/ImagesGallery.svelte';
 	import { firestore, storage } from '$lib/firebase';
+	import { getDate } from '$lib/utility';
 	import { getDoc, getDocs, limit, orderBy, query } from 'firebase/firestore';
 	import { ref, type StorageReference } from 'firebase/storage';
 	import { onMount } from 'svelte';
@@ -10,6 +11,7 @@
 		description: string;
 		firstImage: string;
 		imagesRef: StorageReference;
+		createdAt: string;
 	}[] = [];
 
 	onMount(async () => {
@@ -27,7 +29,8 @@
 				title: data.title,
 				description: data.description,
 				firstImage: data.firstImage,
-				imagesRef: ref(storage.projectEducation, id)
+				imagesRef: ref(storage.projectEducation, id),
+				createdAt: getDate(data.createdAt.toDate())
 			});
 
 			const last = images.length - 1;
@@ -42,7 +45,8 @@
 				title: data.title,
 				description: data.description,
 				firstImage: data.firstImage,
-				imagesRef: ref(storage.projectHealth, id)
+				imagesRef: ref(storage.projectHealth, id),
+				createdAt: getDate(data.createdAt.toDate())
 			});
 
 			const last = images.length - 1;

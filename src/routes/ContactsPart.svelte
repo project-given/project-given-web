@@ -40,11 +40,10 @@
 
 <div
 	id="contacts"
-	class="flex h-min w-full flex-row items-center justify-center gap-8 bg-blue-0 p-8 py-16 text-white"
+	class="flex h-min w-full flex-col items-center justify-center gap-8 bg-blue-0 p-8 py-16 text-white md:flex-row"
 >
-	<div class="flex h-min w-full max-w-lg flex-col text-8xl">
-		<div>GET</div>
-		<div>INVOLVED</div>
+	<div class="h-min max-w-lg text-5xl sm:text-6xl md:w-min md:text-7xl lg:text-8xl">
+		<div>Get Involved</div>
 	</div>
 	<form
 		class="flex h-fit w-80 flex-col gap-4 md:w-96 lg:w-[500px]"
@@ -62,7 +61,7 @@
 			Submit
 		</button>
 	</form>
-	<div class="flex flex-col gap-8">
+	<div class="flex gap-8 md:flex-col">
 		{#each contacts as { name, link }}
 			<a href={link}>
 				<img

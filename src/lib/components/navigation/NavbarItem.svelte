@@ -2,7 +2,7 @@
 	import { clickOutside } from '$lib/clickOutside';
 	import { fade, slide } from 'svelte/transition';
 
-	export let name: string;
+	// export let name: string;
 	export let urls: {
 		url: string;
 		name: string;
@@ -38,18 +38,44 @@
 	bind:this={navbarItem}
 >
 	<div
-		class={'cursor-pointer select-none whitespace-nowrap text-lg font-bold transition-all group-hover:scale-110 group-hover:text-blue-500 ' +
+		class={'h-12 w-12 cursor-pointer transition-all group-hover:scale-110 group-hover:text-blue-500 ' +
 			(showUrls ? 'scale-110 text-blue-500' : '')}
 		on:cancel={() => (showUrls = false)}
 		on:pointerup={() => {
 			showUrls = !showUrls;
-			// if (onClick) {
-			// 	onClick();
-			// 	showUrls = false;
-			// }
 		}}
 	>
-		{name}
+		<svg fill="#137ea6" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"
+			><defs
+				><style>
+					.cls-1 {
+						fill: none;
+					}
+				</style></defs
+			><title>table-of-contents</title><rect x="4" y="6" width="18" height="2" /><rect
+				x="4"
+				y="12"
+				width="18"
+				height="2"
+			/><rect x="4" y="18" width="18" height="2" /><rect x="4" y="24" width="18" height="2" /><rect
+				x="26"
+				y="6"
+				width="2"
+				height="2"
+			/><rect x="26" y="12" width="2" height="2" /><rect x="26" y="18" width="2" height="2" /><rect
+				x="26"
+				y="24"
+				width="2"
+				height="2"
+			/><rect
+				id="_Transparent_Rectangle_"
+				data-name="&lt;Transparent Rectangle&gt;"
+				class="cls-1"
+				width="32"
+				height="32"
+			/></svg
+		>
+		<!-- {name} -->
 	</div>
 
 	{#if showUrls && urls.length !== 0}

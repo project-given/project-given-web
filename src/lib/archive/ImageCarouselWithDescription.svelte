@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import ImageCarousel from '../components/ImageCarousel.svelte';
 
 	export let title: string;
@@ -22,4 +22,4 @@
 			{description}
 		</div>
 	</div>
-</div>
+</div> -->

@@ -14,6 +14,10 @@ export default {
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif']
+			},
+			scale: {
+				80: '0.80',
+				60: '0.60'
 			}
 		}
 	},

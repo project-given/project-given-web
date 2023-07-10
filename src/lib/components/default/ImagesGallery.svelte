@@ -9,6 +9,7 @@
 		imagesRef: StorageReference;
 		description: string;
 		title: string;
+		createdAt: string;
 	}[];
 	// export let imageHeight: number = 300;
 	// export let imageWidth: number = 300;
@@ -30,12 +31,12 @@
 	});
 </script>
 
-<div class="relative h-[500px] w-full overflow-x-hidden">
+<div class="relative h-64 w-full overflow-x-hidden md:h-96 lg:h-[450px] xl:h-[500px]">
 	<div bind:this={container} class="absolute flex flex-row items-center justify-start">
 		{#each [0, 1] as _}
-			{#each images as { firstImage, imagesRef, description, title }}
-				<div class="h-[500px] w-[500px]">
-					<ImageInfo {firstImage} {imagesRef} {description} {title} {moving} />
+			{#each images as { firstImage, imagesRef, description, title, createdAt }}
+				<div class="h-64 w-64 md:h-96 md:w-96 lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[500px]">
+					<ImageInfo {firstImage} {imagesRef} {description} {title} {moving} {createdAt} />
 				</div>
 			{/each}
 		{/each}

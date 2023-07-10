@@ -15,6 +15,7 @@
 	export let imagesRef: StorageReference;
 	export let title: string;
 	export let description: string;
+	export let createdAt: string;
 
 	// export let height: number = -1;
 	// export let width: number = -1;
@@ -58,7 +59,12 @@
 	on:pointerleave={() => (hovered = false)}
 	on:pointerup={() => {
 		hovered = true;
-		imagePopup.set({ urls: [imageSrc], title: title, description: description });
+		imagePopup.set({
+			urls: [imageSrc],
+			title: title,
+			description: description,
+			createdAt: createdAt
+		});
 		getRestOfImages();
 		// setImagePopupParameters({ url: url, title: title, description: description });
 	}}

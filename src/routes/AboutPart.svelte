@@ -66,10 +66,13 @@
 
 <ShowElement delay={200} direction="up">
 	<div class="flex w-full flex-row justify-center">
-		<div class=" max-w-4xl">
+		<div class="max-w-3xl px-8 sm:px-16 lg:max-w-4xl xl:max-w-6xl">
 			{#if info['about']}
-				<div class="pb-4 text-5xl font-bold">{info['about']['title']}</div>
-				{info['about']['description']}
+				<div class="text-2xl font-bold sm:text-4xl lg:text-5xl">{info['about']['title']}</div>
+				<div class="h-4 sm:h-6 lg:h-12" />
+				<div class="sm:text-lg">
+					{info['about']['description']}
+				</div>
 			{:else}
 				<div class="h-96 w-full" />
 			{/if}
@@ -79,7 +82,7 @@
 <div class="h-60" />
 <!-- <ShowElement delay={200} direction="fade"> -->
 
-<div class="flex h-[75vh] w-full flex-row">
+<div class="flex h-[100vh] w-full flex-col-reverse sm:h-[120vh] md:h-[75vh] md:flex-row">
 	<div class="flex-1">
 		<ImageCarousel bind:images />
 	</div>
@@ -87,9 +90,11 @@
 		<ShowElement delay={200} direction="left">
 			<div class="h-full w-full">
 				{#if info['main']}
-					<div class="text-7xl">{info['main']['title']}</div>
-					<div class="h-20" />
-					<div class="text-3xl">{info['main']['description']}</div>
+					<div class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">{info['main']['title']}</div>
+					<div class="h-8 sm:h-14 lg:h-20" />
+					<div class="text sm:text-xl lg:text-2xl xl:text-3xl">
+						{info['main']['description']}
+					</div>
 				{/if}
 			</div>
 		</ShowElement>
