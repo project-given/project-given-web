@@ -70,7 +70,7 @@
 			{#if info['about']}
 				<div class="text-2xl font-bold sm:text-4xl lg:text-5xl">{info['about']['title']}</div>
 				<div class="h-4 sm:h-6 lg:h-12" />
-				<div class="sm:text-lg">
+				<div class="text-lg md:text-2xl md:tracking-wider">
 					{info['about']['description']}
 				</div>
 			{:else}
@@ -79,7 +79,7 @@
 		</div>
 	</div>
 </ShowElement>
-<div class="h-60" />
+<div class="h-52" />
 <!-- <ShowElement delay={200} direction="fade"> -->
 
 <div class="flex h-[100vh] w-full flex-col-reverse sm:h-[120vh] md:h-[75vh] md:flex-row">
