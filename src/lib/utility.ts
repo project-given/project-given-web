@@ -20,7 +20,6 @@ function getDate(date: Date) {
 		.substring(0, 10)
 		.split('-')
 		.forEach((s) => d.push(Number(s)));
-	console.log(d);
 	return `${months[d[1] - 1]} ${d[2]}, ${d[0]}`;
 }
 

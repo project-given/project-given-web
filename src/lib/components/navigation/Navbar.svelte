@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { screenUnit } from '$lib/screenUnit';
 	import { page } from '$app/stores';
 	import NavbarItem from './NavbarItem.svelte';
 
-	const links: { name: string; url: string; description: string }[] = [
+	interface Link {
+		name: string;
+		url: string;
+		description: string;
+	}
+
+	const links: Link[] = [
 		{ name: 'Project Health', url: '/project-health', description: 'On medical help and food' },
 		{ name: 'Project Education', url: '/project-education', description: 'On education' },
 		{
@@ -14,15 +19,28 @@
 		}
 	];
 
-	let scrollY: number = 0;
-	let height: number = 1;
-	let width: number = 1;
+	const specialLinks: Link[] = [
+		{ name: 'Start a Chapter', url: '/project-healh', description: 'Start a new chapter with us' },
+		{
+			name: 'Our Partnerships',
+			url: '/project-educaion',
+			description: 'Organizations that are with us'
+		},
+		{ name: 'Contact Us', url: '/mission-and-history', description: 'Get in contact' }
+	];
 
-	$: console.log(width);
-	$: screenUnit.set(scrollY / height);
+	// const specialLinks: {
+	// 	text: string,
+	// 	links: Link[]
+	// }[] = [
+	// 	{text: 'Get Involved'},
+
+	// ];
+
+	let width: number = 1;
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight={height} bind:innerWidth={width} />
+<svelte:window bind:innerWidth={width} />
 
 <div
 	class={'flex h-12 w-full flex-row items-center bg-white px-12 shadow-lg md:gap-4 lg:gap-8 xl:h-20 xl:gap-12 ' +
@@ -37,17 +55,27 @@
 
 	{#if width <= 850}
 		<!-- <div>A</div> -->
-		<NavbarItem urls={links} />
+		<NavbarItem {links}>
+			<div class="w-full">
+				<NavbarItem text="Get Involved" takeFullWidth isASlot links={specialLinks} />
+				<div
+					class="mt-8 flex w-full cursor-pointer flex-row justify-center border-4 border-blue-1 py-2 text-xl font-bold transition-all hover:bg-blue-1 hover:text-white"
+				>
+					DONATE
+				</div>
+			</div>
+		</NavbarItem>
 	{:else}
 		{#each links as { name, url }}
 			<a
 				href={url}
-				class={'scale-90 transition-all hover:text-blue-0 sm:text-sm md:text-base lg:scale-100 lg:text-base xl:text-xl xl:hover:scale-110 xl:hover:font-bold ' +
+				class={'scale-90 transition-all hover:text-blue-0 sm:text-sm md:text-base lg:scale-100 lg:text-base xl:text-xl xl:hover:scale-110 ' +
 					($page.url.pathname.includes(url) ? 'font-bold text-blue-0' : '')}
 			>
 				{name}
 			</a>
 		{/each}
+		<NavbarItem text="Get Involved" links={specialLinks} />
 
 		<div
 			class="flex h-full cursor-pointer flex-col justify-center border-4 border-blue-1 transition-all hover:bg-blue-1 hover:text-white md:px-4 md:py-2 lg:h-min xl:hover:font-bold"
@@ -57,7 +85,7 @@
 				contacts?.scrollIntoView();
 			}}
 		>
-			Contact Us
+			DONATE
 		</div>
 	{/if}
 	<!-- {/if} -->
