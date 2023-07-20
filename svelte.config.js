@@ -8,8 +8,11 @@ const config = {
 	kit: {
 		adapter: adapter({
 			pages: 'public',
-			assets: 'public'
-		})
+			assets: 'public',
+			fallback: null,
+			precompress: false
+		}),
+		prerender: { default: true }
 	}
 };
 
