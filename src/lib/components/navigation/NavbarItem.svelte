@@ -34,12 +34,12 @@
 
 <div
 	transition:fade
-	class="group relative flex h-full w-min flex-col items-center justify-center first:mr-auto"
+	class="group relative flex h-full w-min flex-col items-center justify-center first:mr-auto hover:scale-110"
 	use:clickOutside={handleClickOutside}
 	bind:this={navbarItem}
 >
 	<div
-		class={'h-12 w-12 cursor-pointer transition-all group-hover:scale-110 group-hover:text-blue-500 ' +
+		class={'h-12 w-12 cursor-pointer transition-all  group-hover:text-blue-500 ' +
 			(showUrls ? 'scale-110 text-blue-500' : '')}
 		on:cancel={() => (showUrls = false)}
 		on:pointerup={() => {

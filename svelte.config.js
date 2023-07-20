@@ -9,10 +9,9 @@ const config = {
 		adapter: adapter({
 			pages: 'public',
 			assets: 'public',
-			fallback: null,
+			fallback: 'index.html',
 			precompress: false
-		}),
-		prerender: { default: true }
+		})
 	}
 };
 
