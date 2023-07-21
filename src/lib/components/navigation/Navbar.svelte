@@ -2,32 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import NavbarItem from './NavbarItem.svelte';
-
-	interface Link {
-		name: string;
-		url: string;
-		description: string;
-	}
-
-	const links: Link[] = [
-		{ name: 'Project Health', url: '/project-health', description: 'On medical help and food' },
-		{ name: 'Project Education', url: '/project-education', description: 'On education' },
-		{
-			name: 'Mission and History',
-			url: '/mission-and-history',
-			description: 'Who we are, and what we want to do'
-		}
-	];
-
-	const specialLinks: Link[] = [
-		{ name: 'Start a Chapter', url: '/project-healh', description: 'Start a new chapter with us' },
-		{
-			name: 'Our Partnerships',
-			url: '/project-educaion',
-			description: 'Organizations that are with us'
-		},
-		{ name: 'Contact Us', url: '/mission-and-history', description: 'Get in contact' }
-	];
+	import { links, specialLinks } from './navigation';
 
 	// const specialLinks: {
 	// 	text: string,
@@ -50,7 +25,7 @@
 		class="-ml-7 scale-60 cursor-pointer transition-all hover:scale-80 lg:scale-75 xl:scale-90 xl:hover:scale-95"
 		on:pointerup={() => goto('/')}
 	>
-		<img class="" src="projectgiven.webp" alt="..." />
+		<img class="" src="/icons/projectgiven.webp" alt="..." />
 	</div>
 
 	{#if width <= 850}
@@ -77,16 +52,12 @@
 		{/each}
 		<NavbarItem text="Get Involved" links={specialLinks} />
 
-		<div
+		<a
 			class="flex h-full cursor-pointer flex-col justify-center border-4 border-blue-1 transition-all hover:bg-blue-1 hover:text-white md:px-4 md:py-2 lg:h-min xl:hover:font-bold"
-			on:pointerup={async () => {
-				if ($page.url.pathname !== '/') await goto('/');
-				const contacts = document.getElementById('contacts');
-				contacts?.scrollIntoView();
-			}}
+			href="/donate"
 		>
 			DONATE
-		</div>
+		</a>
 	{/if}
 	<!-- {/if} -->
 </div>

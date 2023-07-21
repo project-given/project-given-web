@@ -3,15 +3,12 @@
 	import { page } from '$app/stores';
 	import { clickOutside } from '$lib/clickOutside';
 	import { fade, slide } from 'svelte/transition';
+	import type { Link } from './navigation';
 
 	export let text: string = '';
 	export let takeFullWidth: boolean = false;
 	export let isASlot: boolean = false;
-	export let links: {
-		name: string;
-		url: string;
-		description: string;
-	}[] = [];
+	export let links: Link[] = [];
 
 	let highlightedLinks: boolean[] = [];
 	let highlightItem: boolean = false;

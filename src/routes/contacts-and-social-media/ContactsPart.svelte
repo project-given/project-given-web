@@ -39,11 +39,10 @@
 </script>
 
 <div
-	id="contacts"
-	class="flex h-min w-full flex-col items-center justify-center gap-8 bg-blue-0 p-8 py-16 text-white md:flex-row"
+	class="flex h-min w-full flex-col items-center justify-center gap-16 bg-blue-0 p-8 py-16 text-white md:flex-row"
 >
 	<div class="h-min max-w-lg text-5xl sm:text-6xl md:w-min md:text-7xl lg:text-8xl">
-		<div>Get Involved</div>
+		<div>Contact</div>
 	</div>
 	<form
 		class="flex h-fit w-80 flex-col gap-4 md:w-96 lg:w-[500px]"

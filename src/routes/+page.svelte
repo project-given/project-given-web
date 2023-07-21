@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { screenUnit } from '$lib/screenUnit';
 	import ImagesPart from './ImagesPart.svelte';
-	import Navbar from '../lib/components/navigation/Navbar.svelte';
 	import StatsPart from './StatsPart.svelte';
 	import TopPart from './TopPart.svelte';
 	import VideosPart from './VideosPart.svelte';
 	import AboutPart from './AboutPart.svelte';
-	import ContactsPart from './ContactsPart.svelte';
 	import ShowElement from '$lib/components/ShowElement.svelte';
+	import ContactsPart from './contacts-and-social-media/ContactsPart.svelte';
 </script>
 
 <TopPart />

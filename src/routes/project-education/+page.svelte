@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Heading from '$lib/components/Heading.svelte';
 	import ImageCard from '$lib/components/ImageCard.svelte';
 	import { firestore, storage } from '$lib/firebase';
 	import { getDate } from '$lib/utility';
@@ -47,11 +48,12 @@
 </script>
 
 <div class="flex w-full flex-col items-center">
-	<div class="flex w-full flex-col items-center bg-blue-2 p-12 text-white">
+	<!-- <div class="flex w-full flex-col items-center bg-blue-2 p-12 text-white">
 		<div class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">{title}</div>
 		<div class="h-4 md:h-6" />
 		<div class="max-w-6xl text-base md:text-lg lg:text-2xl">{description}</div>
-	</div>
+	</div> -->
+	<Heading {title} {description} />
 	<div class="h-16" />
 	<div class="flex w-full flex-row flex-wrap justify-center gap-10 px-6 sm:px-12">
 		{#each images as { title, description, firstImage, imagesRef, createdAt }}
