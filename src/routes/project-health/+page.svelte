@@ -55,7 +55,7 @@
 	</div> -->
 	<Heading {title} {description} />
 	<div class="h-16" />
-	<div class="flex w-full flex-row flex-wrap justify-center gap-10 px-6 sm:px-12">
+	<div class="flex w-full flex-row flex-wrap justify-center gap-10 px-8 sm:px-12">
 		{#each images as { title, description, firstImage, imagesRef, createdAt }}
 			<ImageCard {title} {description} {firstImage} {imagesRef} {createdAt} />
 		{/each}
