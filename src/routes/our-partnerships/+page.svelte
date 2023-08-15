@@ -14,7 +14,7 @@
 	<Partner
 		icon="saigonchildren.ico"
 		link="https://www.saigonchildren.com/"
-		title="You Can Give"
+		title="Saigon Children"
 		description="Saigon Children enables disadvantaged children and young adults in Vietnam to reach their full potential through receiving a quality education relevant to their needs"
 	/>
 </div>
