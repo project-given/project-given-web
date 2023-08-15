@@ -70,9 +70,9 @@
 			{#if info['about']}
 				<div class="text-2xl font-bold sm:text-4xl lg:text-5xl">{info['about']['title']}</div>
 				<div class="h-4 sm:h-6 lg:h-12" />
-				<div class="text-lg md:text-2xl md:tracking-wider">
+				<p class="text-lg md:text-2xl md:leading-10 md:tracking-wider">
 					{info['about']['description']}
-				</div>
+				</p>
 			{:else}
 				<div class="h-96 w-full" />
 			{/if}

@@ -11,7 +11,15 @@
 		const educationInfo = (await getDoc(firestore.missionAndHistoryInfoDoc)).data()!;
 		title = educationInfo.title;
 		description = educationInfo.description;
+
+		const s = description.split('. ').map((s) => s + '.');
+		if (s[s.length - 1] === '.') s.pop();
+		sentences = s;
+
+		console.log(sentences);
 	});
+
+	let sentences: string[] = [];
 </script>
 
 <!-- <div class="flex w-full flex-col items-center">
@@ -27,8 +35,10 @@
 <div class="h-16" />
 
 <div class="flex w-full flex-col items-center px-8">
-	<div class="max-w-4xl text-lg sm:text-xl md:text-lg lg:text-xl xl:text-2xl">
-		{description}
+	<div class="flex max-w-7xl flex-col gap-8 text-lg md:text-2xl md:leading-10 md:tracking-wider">
+		{#each sentences as sentence}
+			<div>{sentence}</div>
+		{/each}
 	</div>
 </div>
 

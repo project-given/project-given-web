@@ -44,7 +44,7 @@
 
 <div class="flex w-full flex-row justify-center">
 	<div class="max-w-3xl px-8 sm:px-16 lg:max-w-4xl xl:max-w-6xl">
-		<div class="text-2xl font-bold sm:text-4xl lg:text-6xl">Welcome to Project GIVEN!</div>
+		<div class="text-2xl sm:text-4xl lg:text-6xl">Welcome to Project GIVEN!</div>
 		<div class="h-4 sm:h-6 lg:h-12" />
 		<div class="flex flex-col gap-7 text-lg md:text-2xl md:tracking-wider">
 			<p>
