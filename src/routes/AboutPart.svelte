@@ -11,7 +11,7 @@
 	const info: {
 		about?: {
 			title: string;
-			description: string;
+			descriptions: string[];
 		};
 		main?: {
 			title: string;
@@ -30,7 +30,11 @@
 		const data = (await getDoc(firestore.infoDoc)).data()!;
 		const id = data.main.id;
 
-		info['about'] = data.about;
+		const des = data.about.description.split('..');
+		info['about'] = {
+			title: data.about.title,
+			descriptions: [des[0] + '.', des[1]]
+		};
 
 		let event: DocumentSnapshot;
 		if (data.main.type === 'projectHealth')
@@ -70,8 +74,10 @@
 			{#if info['about']}
 				<div class="text-2xl font-bold sm:text-4xl lg:text-5xl">{info['about']['title']}</div>
 				<div class="h-4 sm:h-6 lg:h-12" />
-				<p class="text-lg md:text-2xl md:leading-10 md:tracking-wider">
-					{info['about']['description']}
+				<p class="flex flex-col gap-4 text-lg md:text-2xl md:leading-10 md:tracking-wider">
+					{#each info['about']['descriptions'] as des}
+						<div class="">{des}</div>
+					{/each}
 				</p>
 			{:else}
 				<div class="h-96 w-full" />
