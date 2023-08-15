@@ -47,8 +47,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="h-full overflow-y-auto">
-				<div class="flex max-w-xl flex-col justify-center gap-6 overflow-y-auto p-12">
+			<div class="h-full overflow-y-auto lg:min-w-[400px] xl:min-w-[550px]">
+				<div class="flex max-w-xl flex-col justify-center gap-6 overflow-y-auto p-10">
 					<div class="text-2xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl">
 						{$imagePopup?.title}
 					</div>
