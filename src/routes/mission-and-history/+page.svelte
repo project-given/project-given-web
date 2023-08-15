@@ -22,6 +22,14 @@
 	</div>
 </div> -->
 
-<Heading {title} {description} />
+<Heading {title} description="" />
+
+<div class="h-16" />
+
+<div class="flex w-full flex-col items-center px-8">
+	<div class="max-w-4xl text-lg sm:text-xl md:text-lg lg:text-xl xl:text-2xl">
+		{description}
+	</div>
+</div>
 
 <div class="h-16" />

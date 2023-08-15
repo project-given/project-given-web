@@ -90,7 +90,7 @@
 		<ShowElement delay={200} direction="left">
 			<div class="h-full w-full">
 				{#if info['main']}
-					<div class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">{info['main']['title']}</div>
+					<div class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">{info['main']['title']}</div>
 					<div class="h-8 sm:h-14 lg:h-20" />
 					<div class="text sm:text-xl lg:text-2xl xl:text-3xl">
 						{info['main']['description']}

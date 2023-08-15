@@ -7,12 +7,14 @@
 
 <div class="flex max-w-3xl flex-col justify-center">
 	<a href={link}>
-		<div class="group -ml-5 flex cursor-pointer flex-row items-center md:ml-0">
-			<img
-				class="scale-80 transition-transform group-hover:scale-90 md:scale-100 md:group-hover:scale-110"
-				src={`/icons/${icon}.webp`}
-				alt="You can give"
-			/>
+		<div class="group -ml-5 mb-4 flex cursor-pointer flex-row items-center md:ml-0">
+			<div class="h-16 w-16">
+				<img
+					class="scale-80 transition-transform group-hover:scale-90 md:scale-100 md:group-hover:scale-110"
+					src={`/icons/${icon}`}
+					alt="You can give"
+				/>
+			</div>
 			<div
 				class="text-2xl transition-all group-hover:text-blue-1 sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl"
 			>
