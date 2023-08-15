@@ -16,7 +16,7 @@
 				/>
 			</div>
 			<div
-				class="text-2xl transition-all group-hover:text-blue-1 sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl"
+				class="text-xl transition-all group-hover:text-blue-1 md:text-2xl lg:text-3xl xl:text-4xl"
 			>
 				{title}
 			</div>
