@@ -47,34 +47,34 @@
 		<div class="text-2xl sm:text-4xl lg:text-6xl">Welcome to Project GIVEN!</div>
 		<div class="h-4 sm:h-6 lg:h-12" />
 		<div class="flex flex-col gap-7 text-lg md:text-2xl md:tracking-wider">
-			<p>
+			<div>
 				We are glad that you are considering volunteering to be a part of our dedication to support
 				and empower disaster-impacted communities. As a new chapter of Project GIVEN, you have the
 				unique opportunity to make a positive impact on the lives of these people who have endured
 				immense challenges. Your dedication and compassion will be the driving force behind a
 				resilient and empowered community.
-			</p>
+			</div>
 
-			<p>
+			<div>
 				As a chapter of Project GIVEN, you will be given the task of running outreach programs in
 				your specific region (worldwide), with chapter based-programs such as opening a fundraiser
 				campaign, implementing relief and recovery projects, or open livelihood support and
 				training. The possibilities are endless!
-			</p>
+			</div>
 
-			<p>
+			<div>
 				Our only requirements are that you should have a focused mission on 1) helping and assisting
 				those in need, 2) have a clear set of objectives and goals, and 3) be a school/college
 				student.
-			</p>
+			</div>
 
-			<p>
+			<div>
 				We’re excited to work with you! To become part of our mission, please fill out the brief
 				form below. After the form is submitted, we will review your application and you will
 				receive a confirmation from us within 1-2 weeks. Please feel free to reach out to us through
 				our email below as well if you have any more questions or if you are encountering any
 				issues.
-			</p>
+			</div>
 			<div class="h-20" />
 			<form class="items-ce flex h-fit w-full flex-col gap-4" on:submit|preventDefault={sendEmail}>
 				<div class="flex w-full flex-row">
