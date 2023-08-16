@@ -41,7 +41,7 @@
 
 <!-- style={`width: ${width}px; height: ${height}px;`} -->
 <div
-	class="h-[500px] w-[450px] cursor-pointer overflow-hidden rounded-lg shadow shadow-black transition-all duration-300 hover:z-10 hover:scale-105"
+	class="min-h-[500px] max-w-[450px] cursor-pointer overflow-hidden rounded-lg shadow shadow-black transition-all duration-300 hover:z-10 hover:scale-105"
 	on:pointerup={() => {
 		imagePopup.set({
 			urls: [imageSrc],
@@ -53,8 +53,8 @@
 	}}
 >
 	<div class="group relative flex h-full w-full flex-col">
-		<img src={imageSrc} alt="..." class="h-3/5 w-full object-cover" />
-		<div transition:fade class="flex h-2/5 flex-col justify-between p-6">
+		<img src={imageSrc} alt="..." class="h-[300px] w-full object-cover" />
+		<div transition:fade class="flex min-h-[200px] flex-col justify-between p-6">
 			<div class="text-2xl text-blue-0">{title}</div>
 			<div class="text-end text-lg text-slate-500">{createdAt}</div>
 		</div>
