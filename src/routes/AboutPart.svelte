@@ -88,13 +88,11 @@
 <div class="h-52" />
 <!-- <ShowElement delay={200} direction="fade"> -->
 
-<div
-	class="flex h-[100vh] min-h-[100vh] w-full flex-col-reverse sm:h-[120vh] md:h-[75vh] md:flex-row"
->
+<div class="flex h-[120vh] w-full flex-col-reverse border-2 border-black md:h-[75vh] md:flex-row">
 	<div class="flex-1">
 		<ImageCarousel bind:images />
 	</div>
-	<div class="flex max-w-5xl flex-1 flex-col justify-center bg-blue-1 p-16 text-white">
+	<div class="flex min-h-[30vh] max-w-5xl flex-1 flex-col justify-center bg-blue-1 p-16 text-white">
 		<ShowElement delay={200} direction="left">
 			<div class="h-full w-full">
 				{#if info['main']}
