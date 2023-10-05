@@ -3,10 +3,24 @@
 	import { page } from '$app/stores';
 	import Navbar from '$lib/components/navigation/Navbar.svelte';
 	import ImageCarouselPopup from '$lib/components/popups/ImageCarouselPopup.svelte';
-
-	const description =
-		'Project Given is a non-profit organization aiming to improve lives of unprivileged members with free whealthcare and education.';
 </script>
+
+<svelte:head>
+	<title>Project Given</title>
+	<meta
+		name="description"
+		content="Project Given is a non-profit organization aiming to improve lives of unprivileged members with free whealthcare and education."
+	/>
+	<meta property="og:url" content="https://projectgiven.org/" />
+	<meta property="og:title" content="Project Given" />
+	<meta
+		property="og:description"
+		content="Project Given is a non-profit organization aiming to improve lives of unprivileged members with free whealthcare and education."
+	/>
+	<meta property="og:image" content="/projectgivenfront.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_US" />
+</svelte:head>
 
 <div class="font-poppins">
 	<!-- {#if $page.url.pathname !== '/'} -->
