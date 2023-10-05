@@ -45,7 +45,7 @@
 			<a
 				href={url}
 				class={'scale-90 transition-all hover:text-blue-0 sm:text-sm md:text-base lg:scale-100 lg:text-base xl:text-xl xl:hover:scale-110 ' +
-					($page.url.pathname.includes(url) ? 'font-bold text-blue-0' : '')}
+					($page.url.pathname.includes(url) ? 'text-blue-0' : '')}
 			>
 				{name}
 			</a>

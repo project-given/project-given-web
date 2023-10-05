@@ -53,7 +53,7 @@
 	}}
 >
 	<div class="group relative flex h-full w-full flex-col">
-		<img src={imageSrc} alt="..." class="h-[300px] w-full object-cover" />
+		<img src={imageSrc} alt={title} class="h-[300px] w-full object-cover" />
 		<div transition:fade class="flex min-h-[200px] flex-col justify-between p-6">
 			<div class="text-2xl text-blue-0">{title}</div>
 			<div class="text-end text-lg text-slate-500">{createdAt}</div>
