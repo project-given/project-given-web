@@ -22,7 +22,7 @@
 		(width <= 850 ? 'justify-between' : 'justify-center')}
 >
 	<div
-		class="-ml-7 scale-60 cursor-pointer transition-all hover:scale-80 lg:scale-75 xl:scale-90 xl:hover:scale-95"
+		class="-ml-7 scale-60 cursor-pointer transition-all hover:scale-80 lg:scale-75"
 		on:pointerup={() => goto('/')}
 	>
 		<img class="" src="/icons/projectgiven.webp" alt="..." />
@@ -34,7 +34,7 @@
 			<div class="w-full">
 				<NavbarItem text="Get Involved" takeFullWidth isASlot links={specialLinks} />
 				<div
-					class="mt-8 flex w-full cursor-pointer flex-row justify-center border-4 border-blue-1 py-2 text-xl font-bold transition-all hover:bg-blue-1 hover:text-white"
+					class="mt-8 flex w-full cursor-pointer flex-row justify-center border-4 border-blue-1 py-2 text-base font-bold transition-all hover:bg-blue-1 hover:text-white"
 				>
 					DONATE
 				</div>
@@ -44,7 +44,7 @@
 		{#each links as { name, url }}
 			<a
 				href={url}
-				class={'scale-90 transition-all hover:text-blue-0 sm:text-sm md:text-base lg:scale-100 lg:text-base xl:text-xl xl:hover:scale-110 ' +
+				class={'scale-90 transition-all hover:text-blue-0 sm:text-sm md:text-base lg:text-base xl:text-lg xl:hover:scale-100 ' +
 					($page.url.pathname.includes(url) ? 'text-blue-0' : '')}
 			>
 				{name}
@@ -53,7 +53,7 @@
 		<NavbarItem text="Get Involved" links={specialLinks} />
 
 		<a
-			class="flex h-full cursor-pointer flex-col justify-center border-4 border-blue-1 transition-all hover:bg-blue-1 hover:text-white md:px-4 md:py-2 lg:h-min xl:hover:font-bold"
+			class="flex h-full cursor-pointer flex-col justify-center border-4 border-blue-1 text-sm transition-all hover:bg-blue-1 hover:text-white md:px-4 md:py-2 lg:h-min xl:hover:font-bold"
 			href="/donate"
 		>
 			DONATE

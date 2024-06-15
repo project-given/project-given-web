@@ -49,11 +49,11 @@
 			</div>
 			<div class="h-full overflow-y-auto lg:min-w-[400px] xl:min-w-[550px]">
 				<div class="flex max-w-xl flex-col justify-center gap-6 overflow-y-auto p-10">
-					<div class="text-2xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl">
+					<div class="text-xl md:text-3xl">
 						{$imagePopup?.title}
 					</div>
 					<div class="my-2 h-2 w-16 bg-blue-1 md:my-4 xl:my-6" />
-					<div class="text-lg sm:text-xl md:text-lg lg:text-xl xl:text-2xl">
+					<div class="text-base md:text-lg">
 						{$imagePopup?.description}
 					</div>
 					<div class="text-end text-lg text-slate-500">{$imagePopup?.createdAt}</div>

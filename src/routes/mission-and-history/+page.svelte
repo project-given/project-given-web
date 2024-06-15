@@ -35,7 +35,7 @@
 <div class="h-16" />
 
 <div class="flex w-full flex-col items-center px-8">
-	<div class="flex max-w-7xl flex-col gap-8 text-lg md:text-2xl md:leading-10 md:tracking-wider">
+	<div class="flex max-w-7xl flex-col gap-4 text-lg md:leading-7 md:tracking-wider">
 		{#each sentences as sentence}
 			<div>{sentence}</div>
 		{/each}

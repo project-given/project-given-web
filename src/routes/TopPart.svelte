@@ -19,13 +19,11 @@
 			class="absolute bottom-0 flex w-full flex-col justify-center gap-4 bg-gradient-to-t from-black to-transparent p-8 md:px-20 md:py-28 md:pt-40"
 		>
 			<ShowElement speed="slow" direction="fade" delay={300}>
-				<div class="text-4xl font-bold text-green-4 sm:text-6xl md:text-7xl xl:text-8xl">
-					Project Given
-				</div>
+				<div class="text-4xl font-bold text-green-4 sm:text-6xl">Project Given</div>
 			</ShowElement>
 
 			<ShowElement speed="slow" direction="fade" delay={300}>
-				<div class="max-w-6xl font-bold text-green-2 sm:text-lg md:text-2xl xl:text-3xl">
+				<div class="max-w-6xl font-bold text-green-2 sm:text-lg">
 					Humanitarian Aid for Healthcare and Education
 				</div>
 			</ShowElement>

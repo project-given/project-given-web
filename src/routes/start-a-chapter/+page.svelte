@@ -44,9 +44,9 @@
 
 <div class="flex w-full flex-row justify-center">
 	<div class="max-w-3xl px-8 sm:px-16 lg:max-w-4xl xl:max-w-6xl">
-		<div class="text-2xl sm:text-4xl lg:text-6xl">Welcome to Project GIVEN!</div>
+		<div class="text-4xl">Welcome to Project GIVEN!</div>
 		<div class="h-4 sm:h-6 lg:h-12" />
-		<div class="flex flex-col gap-7 text-lg md:text-2xl md:tracking-wider">
+		<div class="flex flex-col gap-7 text-lg md:tracking-wider">
 			<div>
 				We are glad that you are considering volunteering to be a part of our dedication to support
 				and empower disaster-impacted communities. As a new chapter of Project GIVEN, you have the
@@ -122,7 +122,7 @@
 					<textarea required class="h-28 w-full p-2" bind:value={info.message} />
 				</label>
 				<button
-					class={'shadows w-full max-w-md  bg-blue-2 py-2 font-bold shadow shadow-black transition-colors ' +
+					class={'shadows w-full max-w-md  bg-blue-2 py-2 font-bold text-white shadow shadow-black transition-colors ' +
 						(isLoading ? 'cursor-default bg-slate-200 ' : '')}
 					type="submit"
 					disabled={isLoading}

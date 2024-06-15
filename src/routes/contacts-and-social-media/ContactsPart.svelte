@@ -41,18 +41,18 @@
 <div
 	class="flex h-min w-full flex-col items-center justify-center gap-16 bg-blue-0 p-8 py-16 text-white md:flex-row"
 >
-	<div class="h-min max-w-lg text-5xl sm:text-6xl md:w-min md:text-7xl lg:text-8xl">
+	<div class="h-min max-w-lg text-3xl">
 		<div>Contact</div>
 	</div>
 	<form
-		class="flex h-fit w-80 flex-col gap-4 md:w-96 lg:w-[500px]"
+		class="flex h-fit w-80 flex-col gap-4 text-sm text-black md:w-80"
 		on:submit|preventDefault={sendEmail}
 	>
-		<input required class="w-full p-2" type="text" placeholder="Name" bind:value={info.name} />
-		<input required class="w-full p-2" type="email" placeholder="Email" bind:value={info.email} />
-		<textarea required class=" w-full p-2" placeholder="Message" bind:value={info.message} />
+		<input required class="w-full p-1" type="text" placeholder="Name" bind:value={info.name} />
+		<input required class="w-full p-1" type="email" placeholder="Email" bind:value={info.email} />
+		<textarea required class="w-full p-1" placeholder="Message" bind:value={info.message} />
 		<button
-			class={'shadows w-full bg-blue-2  py-2 font-bold shadow shadow-black transition-colors  ' +
+			class={'shadows w-full bg-blue-2  py-2 font-bold text-white shadow shadow-black transition-colors  ' +
 				(isLoading ? 'cursor-default bg-slate-200 ' : '')}
 			type="submit"
 			disabled={isLoading}
@@ -64,7 +64,7 @@
 		{#each contacts as { name, link }}
 			<a href={link}>
 				<img
-					class="h-12 w-12 cursor-pointer transition-transform hover:scale-110"
+					class="h-8 w-8 cursor-pointer transition-transform hover:scale-110"
 					src={`/contacts/${name}.svg`}
 					alt="..."
 				/>

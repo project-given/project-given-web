@@ -72,9 +72,9 @@
 	<div class="flex w-full flex-row justify-center">
 		<div class="max-w-3xl px-8 sm:px-16 lg:max-w-4xl xl:max-w-6xl">
 			{#if info['about']}
-				<div class="text-2xl font-bold sm:text-4xl lg:text-5xl">{info['about']['title']}</div>
+				<div class="text-2xl font-bold sm:text-4xl">{info['about']['title']}</div>
 				<div class="h-4 sm:h-6 lg:h-12" />
-				<p class="flex flex-col gap-4 text-lg md:text-2xl md:leading-10 md:tracking-wider">
+				<p class="flex flex-col gap-4 text-lg md:leading-10 md:tracking-wider">
 					{#each info['about']['descriptions'] as des}
 						<div class="">{des}</div>
 					{/each}
@@ -96,9 +96,9 @@
 		<ShowElement delay={200} direction="left">
 			<div class="h-full w-full">
 				{#if info['main']}
-					<div class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">{info['main']['title']}</div>
+					<div class="text-3xl sm:text-4xl">{info['main']['title']}</div>
 					<div class="h-8 sm:h-14 lg:h-20" />
-					<div class="text sm:text-xl lg:text-2xl xl:text-3xl">
+					<div class="text-lg">
 						{info['main']['description']}
 					</div>
 				{/if}
@@ -117,9 +117,9 @@
 					imagesRef={info['main']['imagesRef']}
 				/>
 			</div>
-			<div class="flex h-full max-w-xl flex-col justify-center gap-6 pl-12">
+			<div class="flex flex-col justify-center h-full max-w-xl gap-6 pl-12">
 				<div class="text-6xl">{info['main']['title']}</div>
-				<div class="h-2 w-16 bg-blue-1" />
+				<div class="w-16 h-2 bg-blue-1" />
 				<div class="text-lg">{info['main']['description']}</div>
 			</div>
 			{/if}

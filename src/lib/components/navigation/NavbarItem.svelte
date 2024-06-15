@@ -62,9 +62,7 @@
 						{text}
 					</div>
 				{:else}
-					<div
-						class="flex-grow scale-90 transition-all sm:text-sm md:text-base lg:scale-100 xl:text-xl"
-					>
+					<div class="flex-grow scale-90 transition-all sm:text-sm md:text-base lg:scale-100">
 						{text}
 					</div>
 				{/if}
@@ -166,7 +164,7 @@
 					}}
 				>
 					<div
-						class={'whitespace-nowrap text-xl font-bold transition-all  ' +
+						class={'whitespace-nowrap text-base font-bold transition-all  ' +
 							(highlightedLinks[i] ? 'text-blue-1' : '')}
 					>
 						{name}

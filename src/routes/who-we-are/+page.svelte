@@ -59,7 +59,7 @@
 			name: 'Joel Shin',
 			role: 'Regional Director',
 			description:
-				'Joel is currently a senior at Yonsei University, Korea, who enjoys reading and expanding his knowledge on a variety of topics. He is compassionate in assisting others and enjoys discussing insights and perspectives on various fields of studies. As a regional director, he is dedicated to work as a bridge to connect people around the world and impact positively through education and reading. Whatever the circumstances, he is willing to help when it comes to children education.',
+				'Joel is currently an undergraduate at Yonsei University, Korea, who enjoys reading and expanding his knowledge on a variety of topics. He is compassionate in assisting others and enjoys discussing insights and perspectives on various fields of studies. As a regional director, he is dedicated to work as a bridge to connect people around the world and impact positively through education and reading. Whatever the circumstances, he is willing to help when it comes to children education.',
 			image: '/teamMembers/joel.png',
 			school: 'Yonsei University, Korea'
 		},
@@ -93,9 +93,9 @@
 
 <div class="h-16" />
 <section>
-	<h1 class="text-center text-6xl text-blue-0">Our Team</h1>
+	<h1 class="text-center text-4xl text-blue-0">Our Team</h1>
 	<div class="h-4" />
-	<h3 class="text-center text-xl">Meet the founders and members of Project Given!</h3>
+	<h3 class="text-center text-lg">Meet the founders and members of Project Given!</h3>
 	<div class="h-16" />
 	<div class="flex w-full flex-col items-center px-8">
 		<div

@@ -15,14 +15,12 @@
 					alt="You can give"
 				/>
 			</div>
-			<div
-				class="text-xl transition-all group-hover:text-blue-1 md:text-2xl lg:text-3xl xl:text-4xl"
-			>
+			<div class="text-xl transition-all group-hover:text-blue-1 lg:text-3xl xl:text-4xl">
 				{title}
 			</div>
 		</div>
 	</a>
-	<div class="text-lg sm:text-xl md:text-lg lg:text-xl xl:text-2xl">
+	<div class="text-lg">
 		{description}
 	</div>
 </div>

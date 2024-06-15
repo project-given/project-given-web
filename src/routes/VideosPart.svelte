@@ -36,7 +36,7 @@
 							<lite-youtube videoid={id} />
 						</div>
 
-						<div class="pb-4 pt-1 text-lg">
+						<div class="pb-4 pt-1 text-base">
 							{about}
 						</div>
 					</div>
