@@ -7,6 +7,7 @@
 		description: string;
 		image: string;
 		school?: string;
+		major?: string;
 	}[] = [
 		{
 			name: 'Ryan Chen',
@@ -14,7 +15,8 @@
 			description:
 				'Ryan is a rising senior. In addition to excelling in math competitions and enjoying fantasy football, he is passionate about serving his community and helping underprivileged children around the world. He is committed to making a positive impact wherever he goes.',
 			image: '/teamMembers/ryan.png',
-			school: 'Massachusetts Institute of Technology, U.S'
+			school: 'Massachusetts Institute of Technology, U.S',
+			major: 'Mathematics'
 		},
 		{
 			name: 'Jae Won Kim',
@@ -22,7 +24,8 @@
 			description:
 				'James is a rising senior with a passion for computer science and a talent for developing technology that connects people. As the program director for Project Given, he is committed to using his skills and knowledge to support and empower children around the globe.',
 			image: '/teamMembers/james.png',
-			school: 'University of Illinois Urbana Champaign, U.S'
+			school: 'University of Illinois Urbana Champaign, U.S',
+			major: 'Data Science'
 		},
 		{
 			name: 'Leejun Kim',
@@ -30,7 +33,8 @@
 			description:
 				'Leejun is an undergraduate computer science major at the University of Washington, Paul Allen School, Seattle. With a genuine passion for exploring the intersection of technology and society, she constantly seeks to understand the profound ways in which these realms intertwine and influence individuals and communities alike. Outside of her academic pursuits, Leejun loves reading, drawing, and coding.',
 			image: '/teamMembers/leejun.png',
-			school: 'University of Washington, Paul Allen School, U.S'
+			school: 'University of Washington, Paul Allen School, U.S',
+			major: 'Computer Science'
 		},
 		{
 			name: 'Brian Lee',
@@ -107,7 +111,9 @@
 					<span class="mt-1 text-2xl font-bold text-blue-0">{member.name}</span>
 					<span class="-mt-1 text-lg">{member.role}</span>
 					{#if member.school}
-						<span class="text-sm">({member.school})</span>
+						<span class="text-sm">
+							({member.school + (member.major ? ` / ${member.major}` : '')})
+						</span>
 					{/if}
 					<div class="h-1" />
 					<span class="text-sm">{member.description}</span>
