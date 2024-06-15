@@ -18,7 +18,7 @@
 <svelte:window bind:innerWidth={width} />
 
 <div
-	class={'flex h-12 w-full flex-row items-center bg-white px-12 shadow-lg md:gap-4 lg:gap-8 xl:h-20 xl:gap-12 ' +
+	class={'flex h-12 w-full flex-row items-center bg-white px-12 shadow-lg md:gap-3 lg:gap-6 xl:h-20 xl:gap-10 ' +
 		(width <= 850 ? 'justify-between' : 'justify-center')}
 >
 	<div

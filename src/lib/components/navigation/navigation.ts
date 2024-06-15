@@ -11,7 +11,8 @@ const links: Link[] = [
 		name: 'Mission and History',
 		url: '/mission-and-history',
 		description: 'Who we are, and what we want to do'
-	}
+	},
+	{ name: 'Who We Are', url: '/who-we-are', description: 'Our team and our values' }
 ];
 
 const specialLinks: Link[] = [
