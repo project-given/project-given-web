@@ -7,12 +7,13 @@ interface Link {
 const links: Link[] = [
 	{ name: 'Project Health', url: '/project-health', description: 'On medical help and food' },
 	{ name: 'Project Education', url: '/project-education', description: 'On education' },
-	{
-		name: 'Mission and History',
-		url: '/mission-and-history',
-		description: 'Who we are, and what we want to do'
-	},
-	{ name: 'Who We Are', url: '/who-we-are', description: 'Our team and our values' }
+	// {
+	// 	name: 'Mission and History',
+	// 	url: '/mission-and-history',
+	// 	description: 'Who we are, and what we want to do'
+	// },
+	{ name: 'Who We Are', url: '/who-we-are', description: 'Our team and our values' },
+	{ name: 'Doczilla', url: '/doczilla', description: 'Our remote telemedicine app' }
 ];
 
 const specialLinks: Link[] = [

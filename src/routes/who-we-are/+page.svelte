@@ -1,5 +1,25 @@
 <script lang="ts">
 	import Heading from '$lib/components/Heading.svelte';
+	import { firestore } from '$lib/firebase';
+	import { getDoc } from 'firebase/firestore';
+	import { onMount } from 'svelte';
+
+	let title: string = '';
+	let description: string = '';
+
+	onMount(async () => {
+		const educationInfo = (await getDoc(firestore.missionAndHistoryInfoDoc)).data()!;
+		title = educationInfo.title;
+		description = educationInfo.description;
+
+		const s = description.split('. ').map((s) => s + '.');
+		if (s[s.length - 1] === '.') s.pop();
+		sentences = s;
+
+		console.log(sentences);
+	});
+
+	let sentences: string[] = [];
 
 	const teamMembers: {
 		name: string;
@@ -122,5 +142,20 @@
 		</div>
 	</div>
 </section>
+
+<div class="h-32" />
+
+<h1 class="text-center text-4xl text-blue-0">Our Mission and History</h1>
+<div class="h-4" />
+<h3 class="text-center text-lg">Who we are, and what we want to do</h3>
+<div class="h-8" />
+
+<div class="flex w-full flex-col items-center px-8">
+	<div class="flex max-w-7xl flex-col gap-4 text-lg md:leading-7 md:tracking-wider">
+		{#each sentences as sentence}
+			<div>{sentence}</div>
+		{/each}
+	</div>
+</div>
 
 <div class="h-16" />
