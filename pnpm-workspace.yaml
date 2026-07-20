@@ -1,5 +1,0 @@
-allowBuilds:
-  '@sveltejs/kit': false
-  esbuild: false
-  protobufjs: false
-  svelte-preprocess: false
