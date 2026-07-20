@@ -33,6 +33,7 @@
 		"vite": "^4.5.14"
 	},
 	"type": "module",
+	"packageManager": "pnpm@9.15.9",
 	"dependencies": {
 		"@emailjs/browser": "^3.12.1",
 		"@justinribeiro/lite-youtube": "^1.9.0",
