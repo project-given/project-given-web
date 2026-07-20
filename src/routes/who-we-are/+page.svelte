@@ -19,6 +19,8 @@
 		console.log(sentences);
 	});
 
+	// hello
+
 	let sentences: string[] = [];
 
 	const teamMembers: {
