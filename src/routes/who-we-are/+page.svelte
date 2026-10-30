@@ -31,6 +31,14 @@
 		major?: string;
 	}[] = [
 		{
+			name: 'Ella Choe',
+			role: 'President',
+			description:
+				'Ella is a senior at Mercer Island High School with a strong interest in the intersection of science, data, and human health. Passionate about translating knowledge into meaningful community impact, she is dedicated to advancing health awareness, expanding educational opportunities, and supporting underserved communities through youth-led initiatives. As Project Given’s first President following its founding leadership, Ella is committed to building on the founders’ vision, empowering young people to create positive change, and expanding the organization’s reach and lasting impact.',
+			image: '/teamMembers/ella.jpg',
+			school: 'Mercer Island High School, U.S.'
+		},
+		{
 			name: 'Ryan Chen',
 			role: 'Co-Founder',
 			description:
