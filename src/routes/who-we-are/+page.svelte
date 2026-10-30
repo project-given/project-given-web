@@ -54,7 +54,7 @@
 				'James is a rising senior with a passion for computer science and a talent for developing technology that connects people. As the program director for Project Given, he is committed to using his skills and knowledge to support and empower children around the globe.',
 			image: '/teamMembers/james.png',
 			school: 'University of Illinois Urbana Champaign, U.S',
-			major: 'Data Science'
+			major: 'Statistics and Computer Science'
 		},
 		{
 			name: 'Leejun Kim',
