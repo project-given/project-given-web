@@ -12,7 +12,6 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.30.4",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -38,5 +37,8 @@
 		"@justinribeiro/lite-youtube": "^1.9.0",
 		"daisyui": "^3.9.4",
 		"firebase": "^10.14.1"
+	},
+	"engines": {
+		"node": "26.x"
 	}
 }
